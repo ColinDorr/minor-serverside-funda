@@ -3,13 +3,17 @@
 var path = require('path');
 var url = require('url');
 var https = require('https');
+
 var express = require('express');
+var handlebars = require('handlebars');
+
 var compression = require('compression');
 var dotenv = require('dotenv');
 
+
 dotenv.config();
 
-var key = process.env.WORDSAPI_KEY;
+var key = process.env.API_KEY;
 
 if (!key) {
   throw new Error('Missing `API_KEY` in env.');

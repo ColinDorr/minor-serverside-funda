@@ -24,19 +24,15 @@
             <section class="CoverImage"><h1>Lange weekenden in de</h1><h1>buitenlucht</h1></section>
             <form class="gebruikersInput">
                 <section name="huurOfKoop">
-                    <legend>Filters</legend>
-                    <input type="radio" name="huurOfKoopSelectie" id="koop"  value="?type=koop&zo=/"checked="checked">
-                    <label for="koop">Koop</label>
-                    <input type="radio" name="huurOfKoopSelectie" id="huur"  value="?type=huur&zo=/">
-                    <label for="huur">Huur</label>
-                    <input type="radio" name="huurOfKoopSelectie" id="nieuwbouw" value="?type=nieuwbouw&zo=/">
-                    <label for="nieuwbouw">Nieuwbouw</label>
+                    <button id="koop"  name="koop">Koop</button>
+                    <button id="huur"  name="huur">Huur</button>
+                    <button id="nieuwbouw" name="nieuwbouw">Nieuwbouw</button>
                 </section>
 
                 <section name="locatie">
                     <label for="locatie">Locatie</label>
                     <input type="text" name="locatie" id="locatie" placeholder="Plaats, buurt, adres etc.">
-                    <label for="afstand">Afstand</label>
+                    <!-- <label for="afstand">Afstand</label>
                     <select id="afstand" >
                           <option value="0">+0km</option>
                           <option value="1">+1km</option>
@@ -48,7 +44,7 @@
                     <label for="prijsMin">Minimum prijs</label>
                     <input type="number" name="prijsMin" id="prijsMin" value="0">
                     <label for="prijsMax">Maximum prijs</label>
-                    <input type="number" name="prijsMax" id="prijsMax"  value="2000000">
+                    <input type="number" name="prijsMax" id="prijsMax"  value="2000000"> -->
                     <button class="sendAnswers" type="button">Zoek!</button>
                 </section>
 
