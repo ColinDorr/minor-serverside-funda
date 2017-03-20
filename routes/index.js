@@ -4,13 +4,20 @@ var router = express.Router();
 
 require('dotenv').config();
 
-var API_URL =  process.env.URL;;
-var API_KEY = process.env.API_KEY;
-var TYPE = "/?type=koop&zo=/";
-var LOCATION = "heel-nederland";
-var PAGE ="/&page=1&pagesize=25";
+var data = {
+    API_URL :  process.env.URL,
+    API_KEY : process.env.API_KEY,
+    TYPE : "/?type=koop&zo=/",
+    LOCATION : "heel-nederland",
+    DISTANCE : "+0km",
+    PRIJSMIN : 0,
+    PRIJSMAX : 2147483647,
+    PAGE :"/&page=1",
+    PAGESIZE :"&pagesize=25",
+};
 
-var callURL = API_URL+API_KEY+TYPE+LOCATION+PAGE;
+var callURL = data.API_URL+data.API_KEY+data.TYPE+data.LOCATION+"/"+data.DISTANCE+"/"+data.PRIJSMIN+"+"+data.PRIJSMAX+data.PAGE+data.PAGESIZE;
+console.log(callURL);
 
 router.get('/', function(req, res, next) {
     request(callURL, function (errorMessage, response, data) {
@@ -19,7 +26,23 @@ router.get('/', function(req, res, next) {
         res.render('index');
         console.log('error:', errorMessage); // Print the error if one occurred
         console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+
     });
 });
+
+router.post('/', function(req, res){
+    data.TYPE =req.body.huurOfKoopSelectie;
+    data.LOCATION =req.body.locatie;
+
+    var Userdata = { //  Userdata does not get sent to the results page.
+            userTYPE : req.body.huurOfKoopSelectie,
+            userLOCATION : req.body.locatie
+        }
+        console.log (Userdata);
+
+        res.redirect('results');
+        res.send(Userdata);
+});
+
 
 module.exports = router;
