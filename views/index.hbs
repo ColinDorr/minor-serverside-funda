@@ -16,21 +16,50 @@
     <header>
         <section class="CoverImage"><h1>Lange weekenden in de</h1><h1>buitenlucht</h1></section>
         <form class="gebruikersInput">
-            <section name="huurOfKoop">
-                <legend>Filters</legend>
-                <input type="radio" name="huurOfKoopSelectie" id="koop"  value="?type=koop&zo=/"checked="checked">
-                <label for="koop">Koop</label>
-                <input type="radio" name="huurOfKoopSelectie" id="huur"  value="?type=huur&zo=/">
-                <label for="huur">Huur</label>
-                <input type="radio" name="huurOfKoopSelectie" id="nieuwbouw" value="?type=nieuwbouw&zo=/">
-                <label for="nieuwbouw">Nieuwbouw</label>
-            </section>
+                <section name="huurOfKoop">
+                    <legend>Filters</legend>
+                    <input type="radio" name="huurOfKoopSelectie" id="koop"  value="?type=koop&zo=/"checked="checked">
+                    <label for="koop">Koop</label>
+                    <input type="radio" name="huurOfKoopSelectie" id="huur"  value="?type=huur&zo=/">
+                    <label for="huur">Huur</label>
+                    <input type="radio" name="huurOfKoopSelectie" id="nieuwbouw" value="?type=nieuwbouw&zo=/">
+                    <label for="nieuwbouw">Nieuwbouw</label>
+                </section>
 
-            <section name="locatie">
-                <label for="locatie">Locatie</label>
-                <input type="text" name="locatie" id="locatie" placeholder="Plaats, buurt, adres etc.">
-                <button class="sendAnswers" type="button">Zoek!</button>
-            </section>
+                <section name="locatie">
+                    <label for="locatie">Locatie</label>
+                    <input type="text" name="locatie" id="locatie" placeholder="Plaats, buurt, adres etc.">
+                    <label for="afstand">Afstand</label>
+                    <select id="afstand" >
+                          <option value="0">+0km</option>
+                          <option value="1">+1km</option>
+                          <option value="2">+2km</option>
+                          <option value="5">+5km</option>
+                          <option value="10">+10km</option>
+                          <option value="15">+15km</option>
+                    </select>
+                    <label for="prijsMin">Minimum prijs</label>
+                    <input type="number" name="prijsMin" id="prijsMin" value="0">
+                    <label for="prijsMax">Maximum prijs</label>
+                    <input type="number" name="prijsMax" id="prijsMax"  value="2000000">
+                    <button class="sendAnswers" type="button">Zoek!</button>
+                </section>
         </form>
     </header>
 </main>
+
+<section id="searchResults">
+    <h1>Woning in beeld</h1>
+    <section class="homeData">
+        {{#each data.Objects}}
+            <section class="result">
+                <a class="link" href="{{this.URL}}">
+                    <img class="mainImage" src="{{this.FotoLarge}}" alt="{{this.Adres}}">
+                </a>
+                <a class="link" href="{{this.URL}}"><h3 class="adres"></h3></a>
+                <p class="postWoon">{{this.Postcode}} {{this.Woonplaats}}</p>
+                <p class="Koopprijs">{{{this.PrijsGeformatteerdHtml}}}</p>
+                <p class="oppervlakte">{{this.Woonoppervlakte}} m&#178;</p>
+            </section>
+        {{/each}}
+    </section>

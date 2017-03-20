@@ -6,4 +6,5 @@
 ## Sources:
 - https://github.com/wooorm/dictionary
 - https://expressjs.com/en/starter/generator.html
-- https://www.npmjs.com/package/handlebars
+- https://www.npmjs.com/package/dotenv
+- https://www.npmjs.com/package/request
