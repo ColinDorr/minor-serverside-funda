@@ -3,13 +3,10 @@
 var path = require('path');
 var url = require('url');
 var https = require('https');
-
 var express = require('express');
 var handlebars = require('handlebars');
-
 var compression = require('compression');
 var dotenv = require('dotenv');
-
 
 dotenv.config();
 
@@ -62,33 +59,7 @@ function home(req, res) {
   }
 }
 
-function respond(res, err, data) {
-  var doc = toString(render(err, data));
-  var source = data ? JSON.stringify(data) : 'null';
-
-  res.set('Content-Type', 'text/html');
-  res.set('Cache-Control', 'public, max-age=2678400');
-  res.end([
-    '<!doctype html>',
-    '<html lang="en">',
-    '<meta charset="utf-8">',
-    '<meta name="theme-color" content="#d605d6">',
-    '<meta name="viewport" content="width=device-width, initial-scale=1">',
-    '<link rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;,">',
-    '<link rel="manifest" href="/static/manifest.json">',
-    '<title>Dictionary</title>',
-    '<link rel="stylesheet" href="/static/index.css">',
-    '<body class="nojs">',
-    '<script>document.body.className = \'js\';</script>',
-    doc,
-    '<footer>',
-    '<p><a href="https://github.com/wooorm/dictionary/blob/master/LICENSE"><abbr title="Massachusetts Institute of Technology (license)">MIT</abbr></a> © <a href="http://wooorm.com">wooorm</a>',
-    '</footer>',
-    '<script type="text/json">' + source + '</script>',
-    '<script src="/static/index.js"></script>',
-    ''
-  ].join('\n'));
-}
+function respond(res, err, data) {}
 
 function load(value, callback) {
   var word = String(value).toLowerCase();

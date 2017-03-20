@@ -1,0 +1,36 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<!-- <header id="landing">
+    <section>
+        <a href="">
+            <img src="../static/img/fundawonen-logo.svg" alt="logo funda">
+        </a>
+        <ul class="app-header-menu">
+            <li><a href="">Inloggen</a></li>
+            <li><a href="">Registreren</a></li>
+        </ul>
+    </section>
+</header> -->
+<main>
+    <header>
+        <!-- <section class="CoverImage"><h1>Lange weekenden in de</h1><h1>buitenlucht</h1></section> -->
+        <form class="gebruikersInput">
+            <section name="huurOfKoop">
+                <legend>Filters</legend>
+                <input type="radio" name="huurOfKoopSelectie" id="koop"  value="?type=koop&zo=/"checked="checked">
+                <label for="koop">Koop</label>
+                <input type="radio" name="huurOfKoopSelectie" id="huur"  value="?type=huur&zo=/">
+                <label for="huur">Huur</label>
+                <input type="radio" name="huurOfKoopSelectie" id="nieuwbouw" value="?type=nieuwbouw&zo=/">
+                <label for="nieuwbouw">Nieuwbouw</label>
+            </section>
+
+            <section name="locatie">
+                <label for="locatie">Locatie</label>
+                <input type="text" name="locatie" id="locatie" placeholder="Plaats, buurt, adres etc.">
+                <button class="sendAnswers" type="button">Zoek!</button>
+            </section>
+        </form>
+    </header>
+</main>
