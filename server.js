@@ -15,6 +15,7 @@ var key = process.env.API_KEY;
 if (!key) {
   throw new Error('Missing `API_KEY` in env.');
 }
+console.log("help me i'm the server.js")
 
 var endpoint = 'https://wordsapiv1.p.mashape.com';
 var headers = {Accept: 'application/json', 'X-Mashape-Key': key};

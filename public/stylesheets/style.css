@@ -106,7 +106,7 @@ form label[for="nieuwbouw"]:hover{
 
 .CoverImage {
     box-sizing: border-box;
-    background-image: url(../img/homePicture.jpg);
+    background-image: url(../images/homePicture.jpg);
     background-position: bottom left;
     background-repeat: no-repeat;
     background-size: cover;
