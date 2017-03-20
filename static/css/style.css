@@ -1,0 +1,489 @@
+/*
+sources:
+http://codepen.io/necolas/pen/Aksni
+*/
+*{
+    box-sizing: border-box;
+}
+
+:focus{
+    border-style: double;
+}
+
+body{
+    font-family: sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5em;
+    background: #e7f1f5;
+}
+
+body> header{
+    width: 100%;
+    background-color: #F7A100;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body > header section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    margin: 0 auto;
+}
+
+body > header a{
+    flex-grow: 3;
+}
+
+header a img{
+    width: 6.5em;
+    padding: 0.5em 0 0 0;
+    margin: 0 1em;
+}
+header ul{
+    flex: 100%;
+    display: flex;
+    flex-direction: row;
+    float: right;
+    border-right: 0.1em solid #DE9000;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+header ul li {
+    flex: 100%;
+    margin: 0;
+    border-top: none;
+    border-top: 0.1em solid #DE9000;
+    padding: 0;
+}
+header li a{
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    list-style: none;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1rem 1.5rem;
+}
+
+header li a:hover,
+form label[for="koop"]:hover,
+form label[for="huur"]:hover,
+form label[for="nieuwbouw"]:hover{
+    background: #DE9000;
+}
+form label[for="nieuwbouw"]:hover{
+    background: #DE9000;
+}
+@media screen and (min-width: 30em) {
+    body > header section{
+        width: 80%;
+        flex-wrap: nowrap;
+    }
+    /*body > header a{
+        flex-grow: 2;
+    }*/
+    header ul{
+        flex: 1;
+        flex-wrap: nowrap;
+    }
+    header ul li {
+        flex: 1;
+        border-left: 0.1em solid #DE9000;
+        border-top: none;
+    }
+}
+
+
+.CoverImage {
+    box-sizing: border-box;
+    background-image: url(../img/homePicture.jpg);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35vh;
+    width: 80%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+.CoverImage h1{
+    width: 100%;
+    font-size: 1.5em;
+    text-align: left;
+    margin: 0 0 0 10vw;
+    font-weight: 300;
+    color: #53241B;
+ }
+ .CoverImage h1:nth-of-type(1){
+    margin: 15vh 0 0 10vw;
+ }
+
+form{
+    width: 100%;
+    margin: 1em 0;
+    background: #F7A100;
+    box-sizing: border-box;
+    color: white;
+}
+form section{
+    margin: 0 0 1em 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+}
+legend{
+    width: 100%;
+    text-align: center;
+}
+form section:nth-of-type(1){
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+}
+form input[type="radio"] {
+    display: none;
+}
+form input[type="radio"]+label {
+    border-radius: 0.2em;
+    padding:0.5em;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form input[type="radio"]:checked+label {
+    background: #F8C463;
+    color: #53241B;
+}
+form input[type="radio"]:checked+label:hover{
+    background: #DE7000
+}
+form section:nth-of-type(2){
+    padding: 0 0.5em;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+}
+form section:nth-of-type(2) label {
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+select{
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+}
+/*
+button.sendAnswers{
+    width: 70%;
+    margin: 0 15% 1em 15%;
+    box-sizing: border-box;
+    border: none;
+    padding: 1em;
+    color: white;
+    background: #0071B3
+}*/
+
+form section:nth-of-type(2) button.sendAnswers{
+    order: 4;
+    width: 70%;
+    margin: 0 15% 1em 15%;
+    box-sizing: border-box;
+    border: none;
+    padding: 1em;
+    color: white;
+    background: #0071B3
+}
+
+@media screen and (min-width: 30em) {
+    form{
+        width: 100%;
+        margin: 1em 0;
+        background: #F7A100;
+        box-sizing: border-box;
+        color: white;
+    }
+    form section{
+        margin: 0 0 1em 0;
+        padding: 0;
+        border: none;
+        width: 100%;
+    }
+    legend{
+    display: none;
+    }
+    form section:nth-of-type(1){
+        flex-flow: row;
+        padding: 0.5em;
+    }
+    form input[type="radio"]+label {
+     width: auto;
+     }
+
+    form section:nth-of-type(2){
+        flex-flow: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    form section:nth-of-type(2) label[for='locatie'],
+    form section:nth-of-type(2) input[id='locatie']{
+        order: 1;
+        width: 100%;
+        font-size: 1.1rem;
+        margin-bottom: 0.5em;
+    }
+    form section:nth-of-type(2) label[for="afstand"],
+    form section:nth-of-type(2) label[for='prijsMin'],
+    form section:nth-of-type(2) label[for='prijsMax']{
+        width: 33%;
+        box-sizing: border-box;
+        order: 2;
+    }
+
+    form section:nth-of-type(2) select[id="afstand"],
+    form section:nth-of-type(2) input[id='prijsMin'],
+    form section:nth-of-type(2) input[id='prijsMax']{
+        width: 33%;
+        box-sizing: border-box;
+        order: 3;
+    }
+
+    form section:nth-of-type(2) button.sendAnswers{
+        order: 4;
+        width: 50%;
+        margin: 1em 25%;;
+    }
+}
+@media screen and (min-width: 50em) {
+    form {
+    width: 80%;
+    margin: 1em auto;
+    background: #F7A100;
+    box-sizing: border-box;
+    color: white;
+}
+form section{
+    margin: 0em;
+}
+button.sendAnswers{
+    margin-top: 0.5em;
+}
+}
+
+
+
+.displayType{
+    flex-basis: 100%;
+    margin: 1em auto;
+    background: #F7A100;
+    box-sizing: border-box;
+}
+
+.displayType  ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 1.5em;
+}
+.displayType li{
+    list-style: none;
+    margin: 1em 0;
+}
+.displayType li a{
+    padding: 1em;
+    border-radius: 0.2em;
+    color: white;
+    cursor:pointer;
+    text-decoration: none;
+}
+.displayType li.active a{
+    background: #F8C463;
+    color: #53241B;
+}
+.displayType li a:hover{
+        background: #DE9000;
+}
+
+li.active a:hover{
+    background: #DE7000
+}
+
+@media screen and (min-width: 30em){
+    .displayType {
+        flex-wrap: nowrap;
+    }
+}
+@media screen and (min-width: 50em){
+    .displayType {
+        width: 80%;
+    }
+}
+
+#home, #searchResults, #suggestions, #map{
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 1em;
+    background: white;
+}
+
+#map .map{
+    box-sizing: border-box;
+    height: 90vh;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 50em) {
+    #home, #searchResults, #suggestions, #map{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+.homeData {
+    display: flex;
+    flex-flow: column;;
+    width: 100%;
+    justify-content: space-between;
+    margin: 1em 0 1em 0;
+    padding: 0;
+}
+.homeData section {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    margin: 1em 0 1em 0;
+    padding: 0;
+}
+
+@media screen and (min-width: 30em) {
+    .homeData {
+        flex-flow: row;
+        flex-wrap: wrap;
+    }
+    .homeData section {
+        width: 48%;
+    }
+}
+
+@media screen and (min-width: 50em) {
+    .homeData section {
+        width: 32%;
+    }
+}
+
+
+.homeData section:hover  img,
+.requestedData section:hover  img,
+.extraData section:hover  img{
+    opacity: 0.6;
+}
+.homeData section img{
+    width: 100%;
+}
+.homeData section h3, .homeData section p {
+    margin: 0;
+    padding: 0;
+}
+.homeData section a{
+    text-decoration: none;
+    color: #0071B3
+}
+
+.requestedData, .extraData{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+
+.requestedData section, .extraData section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-content: space-between;
+    margin: 0.5em 0;
+}
+
+.requestedData  section  a, .extraData  section  a{
+    width: 100%;
+    text-decoration: none;
+    color: #0071B3
+}
+
+.requestedData section   a img, .extraData  section  a img{
+    width: 100%;
+}
+
+.requestedData .details, .extraData .details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: center;
+    margin: 0;
+    padding:0 1em 0 1em;
+}
+.requestedData .details a,
+.requestedData .details a h3,
+.requestedData .details p,
+.extraData .details a,
+.extraData .details a h3,
+.extraData .details p{
+    margin: 0;
+    padding: 0;
+}
+@media screen and (min-width: 30em) {
+    .requestedData section, .extraData section{
+        flex-direction: row;
+    }
+    .requestedData  section  a, .extraData  section  a{
+        width: 35%;
+    }
+    .requestedData .details, .extraData .details{
+        width: 60%;
+
+    }
+}
+
+.loader {
+    width: 8em;
+    height: 8em;
+    border:  1em solid #F8C463;
+    border-top: 1em solid #DE7000;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+@media screen and (min-width: 30em) {}

@@ -1,1 +1,30 @@
-package.json
+{
+  "name": "ServerSideFunda",
+  "private": false,
+  "version": "0.1.0",
+  "description": "serverside version of my funda web app",
+  "license": "MIT",
+  "keywords": [
+    "serviceside",
+    "funda",
+    "send help"
+  ],
+  "repository": "https://github.com/ColinDorr/minor-serverside-funda",
+  "bugs": "https://github.com/ColinDorr/minor-serverside-funda/issues",
+  "author": "Colin Dörr <info@cdmediadesign@gmail.com> (http://cdmediadesign.nl)",
+  "contributors": [
+     "Colin Dörr <info@cdmediadesign@gmail.com> (http://cdmediadesign.nl)",
+  ],
+  "dependencies": {
+    "compression": "~1.6.2",
+    "express": "~4.14.0",
+    "handlebars": "~4.0.5"
+  },
+  "devDependencies": {
+    "browserify": "~14.1.0",
+  },
+  "scripts": {
+    "start": "node server",
+    "test": "npm run build && npm run lint"
+  },
+}

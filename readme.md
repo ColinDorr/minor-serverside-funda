@@ -4,3 +4,4 @@
 ## Directories
 ## Wishlist
 ## Sources:
+- https://github.com/wooorm/dictionary
