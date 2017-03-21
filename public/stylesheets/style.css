@@ -84,14 +84,23 @@ form label[for="nieuwbouw"]:hover{
 form label[for="nieuwbouw"]:hover{
     background: #DE9000;
 }
+
+main header nav{
+    width: 100%;
+    margin: auto;
+}
+main header nav ul{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        border-right: 0.1em solid #DE9000;
+        /*margin: 1em 0;*/
+}
 @media screen and (min-width: 30em) {
     body > header section{
         width: 80%;
         flex-wrap: nowrap;
     }
-    /*body > header a{
-        flex-grow: 2;
-    }*/
     header ul{
         flex: 1;
         flex-wrap: nowrap;
@@ -101,8 +110,11 @@ form label[for="nieuwbouw"]:hover{
         border-left: 0.1em solid #DE9000;
         border-top: none;
     }
+    main header nav{
+        width: 80%;
+        margin: auto;
+    }
 }
-
 
 .CoverImage {
     box-sizing: border-box;
@@ -114,7 +126,7 @@ form label[for="nieuwbouw"]:hover{
     width: 80%;
     overflow: hidden;
     position: relative;
-    margin: 0 auto;
+    margin: 1em auto;
 }
 .CoverImage h1{
     width: 100%;

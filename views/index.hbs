@@ -14,9 +14,17 @@
 
 <main>
     <header>
-        <section class="CoverImage"><h1>Lange weekenden in de</h1><h1>buitenlucht</h1></section>
+        <section id="CoverImage" class="CoverImage"><h1>Lange weekenden in de</h1><h1>buitenlucht</h1></section>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/results">Resultaten</a></li>
+                <li><a href="/suggestions">Suggesties</a></li>
+            <ul>
+        </nav>
+
         <form class="gebruikersInput" action="/" method="post" >
-                <section name="huurOfKoop">
+                    <section name="huurOfKoop">
                     <legend>Filters</legend>
                     <input type="radio" name="huurOfKoopSelectie" id="koop"  value="?type=koop&zo=/"checked="checked">
                     <label for="koop">Koop</label>
@@ -31,12 +39,12 @@
                     <input type="text" name="locatie" id="locatie" placeholder="Plaats, buurt, adres etc.">
                     <label for="afstand">Afstand</label>
                     <select name="distance" id="afstand" >
-                          <option value="+0km">+0km</option>
-                          <option value="+1km">+1km</option>
-                          <option value="+2km">+2km</option>
-                          <option value="+5km">+5km</option>
-                          <option value="+10km">+10km</option>
-                          <option name="distance" value="+15km">+15km</option>
+                          <option value="0">+0km</option>
+                          <option value="1">+1km</option>
+                          <option value="2">+2km</option>
+                          <option value="5">+5km</option>
+                          <option value="10">+10km</option>
+                          <option value="15">+15km</option>
                     </select>
                     <label for="prijsMin">Minimum prijs</label>
                     <input type="number" name="prijsMin" id="prijsMin" value="0">
@@ -47,19 +55,3 @@
         </form>
     </header>
 </main>
-
-<section id="searchResults">
-    <h1>Woning in beeld</h1>
-    <section class="homeData">
-        {{#each data.Objects}}
-            <section class="result">
-                <a class="link" href="{{this.URL}}">
-                    <img class="mainImage" src="{{this.FotoLarge}}" alt="{{this.Adres}}">
-                </a>
-                <a class="link" href="{{this.URL}}"><h3 class="adres">{{this.Adres}}</h3></a>
-                <p class="postWoon">{{this.Postcode}} {{this.Woonplaats}}</p>
-                <p class="Koopprijs">{{{this.PrijsGeformatteerdHtml}}}</p>
-                <p class="oppervlakte">Oppervlakte {{this.Woonoppervlakte}} m&#178;</p>
-            </section>
-        {{/each}}
-    </section>

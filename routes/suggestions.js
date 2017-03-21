@@ -20,6 +20,14 @@ var callURL = data.API_URL+data.API_KEY+data.TYPE+data.LOCATION+"/"+data.DISTANC
 console.log(callURL);
 
 router.get('/', function(req, res, next) {
+
+
+        // ------------------------------------------------------
+        // Here needs to be some code, that can get the data out of a new Userdata file or of the previes script, so it can be used in the new request.
+        //
+        // And there needs to be filtering and extra options to create a radius around the search.
+        // ------------------------------------------------------
+
     request(callURL, function (errorMessage, response, data) {
         data = JSON.parse(data);
         res.locals.data =  data
