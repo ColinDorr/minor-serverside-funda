@@ -11,6 +11,15 @@ var suggestions = require('./routes/suggestions');
 require('dotenv').config()
 
 var app = express();
+app.set('userdata', {
+    TYPE : "/?type=koop&zo=/",
+    LOCATION : "heel-nederland",
+    DISTANCE : 0,
+    PRIJSMIN : 0,
+    PRIJSMAX : 2147483647,
+    PAGE :"/&page=1"
+});
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

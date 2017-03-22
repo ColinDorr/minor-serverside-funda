@@ -21,7 +21,7 @@
                 <li><a href="/suggestions">Suggesties</a></li>
             <ul>
         </nav>
-                <form class="gebruikersInput">
+                <form class="gebruikersInput" action="/suggestions" method="post" >
                 <section name="huurOfKoop">
                     <legend>Filters</legend>
                     <input type="radio" name="huurOfKoopSelectie" id="koop"  value="?type=koop&zo=/"checked="checked">
@@ -36,7 +36,7 @@
                     <label for="locatie">Locatie</label>
                     <input type="text" name="locatie" id="locatie" placeholder="Plaats, buurt, adres etc.">
                     <label for="afstand">Afstand</label>
-                    <select id="afstand" >
+                    <select name="distance" id="afstand" selected="selected">0
                           <option value="0">+0km</option>
                           <option value="1">+1km</option>
                           <option value="2">+2km</option>
@@ -48,14 +48,14 @@
                     <input type="number" name="prijsMin" id="prijsMin" value="0">
                     <label for="prijsMax">Maximum prijs</label>
                     <input type="number" name="prijsMax" id="prijsMax"  value="2000000">
-                    <button class="sendAnswers" type="button">Zoek!</button>
+                    <button class="sendAnswers" type="submit">Zoek!</button>
                 </section>
         </form>
     </header>
 </main>
 
 <section id="searchResults">
-    <h1>Woning in beeld</h1>
+    <h1>Suggesties</h1>
     <section class="homeData">
         {{#each data.Objects}}
             <section class="result">
@@ -69,3 +69,4 @@
             </section>
         {{/each}}
     </section>
+</section>
