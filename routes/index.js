@@ -4,18 +4,6 @@ var router = express.Router();
 
 require('dotenv').config();
 
-// var userdata = {
-//     API_URL :  process.env.URL,
-//     API_KEY : process.env.API_KEY,
-//     TYPE : "/?type=koop&zo=/",
-//     LOCATION : "heel-nederland",
-//     DISTANCE : 0,
-//     PRIJSMIN : 0,
-//     PRIJSMAX : 2147483647,
-//     PAGE :"/&page=1",
-//     PAGESIZE :"&pagesize=3",
-// };
-
 router.get('/', function(req, res, next) {
     var userdata = req.app.get('userdata');
     var callURL = process.env.URL+ process.env.API_KEY+ userdata.TYPE+ userdata.LOCATION+"/+"+ userdata.DISTANCE+"km/"+ userdata.PRIJSMIN+ "+"+ userdata.PRIJSMAX+ userdata.PAGE+ "&pagesize=3";
