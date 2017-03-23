@@ -494,8 +494,14 @@ li.active a:hover{
     100% { transform: rotate(360deg); }
 }
 
-
-
+li.autoSuggestion{
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+li.autoSuggestion:focus, li.autoSuggestion:hover{
+    background: #F8C463;
+}
 
 
 @media screen and (min-width: 30em) {}

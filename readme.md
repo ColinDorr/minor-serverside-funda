@@ -1,6 +1,7 @@
 # minor-serverside-funda
 ### Features
 - User can search on location.
+- User gets to see a sugestion of possible locations (work in progress).
 - User can search on distance form location
 - User can search with a min and max price
 - User can see houses in a list.
@@ -22,6 +23,7 @@ The user wants to look for a house. With all the filters and features, the user 
 
 
 ### Wishlist
+- Autosuggestion api
 - User sessions
 - Loaders/easy loading
 - Optimise loading
@@ -36,3 +38,4 @@ The user wants to look for a house. With all the filters and features, the user 
 - https://expressjs.com/en/starter/generator.html
 - https://www.npmjs.com/package/dotenv
 - https://www.npmjs.com/package/request
+- https://codepen.io/postleonardo/pen/PwdQmv
