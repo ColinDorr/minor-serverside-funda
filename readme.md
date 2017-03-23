@@ -20,7 +20,7 @@ The user wants to look for a house. With all the filters and features, the user 
     - stylesheets
 - routes
 - views
- 
+
 
 ### Wishlist
 - Autosuggestion api
@@ -43,8 +43,13 @@ The user wants to look for a house. With all the filters and features, the user 
 
 ## Funda
 #### The Funda app
+Homepage
 ![homescreen](./screenshots/homescreen.jpg)
+
+Search results page
 ![search](./screenshots/search.jpg)
+
+Suggestions page
 ![suggestions](./screenshots/suggestions.jpg)
 
 #### Autofill search
