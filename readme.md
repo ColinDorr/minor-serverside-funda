@@ -53,20 +53,20 @@ Suggestions page
 ![suggestions](./screenshots/suggestions.jpg)
 
 #### Autofill search
-![autofill-with-js](./screenshots/autofill-with-js.jpg)
+![autofill-with-js](./screenshots/autofill-with-js.JPG)
 ![autofill-without-js](./screenshots/autofill-without-js.jpg)
 
 
 #### Funda speed insight
 PageSpeed Insights desktop:
-![desktop-support](./screenshots/desktop-support.jpg)
+![desktop-support](./screenshots/desktop-support.JPG)
 
 PageSpeed Insights mobile:
-![mobile-support](./screenshots/mobile-support.jpg)
+![mobile-support](./screenshots/mobile-support.JPG)
 
 #### Chorme developer tools
 Loadingtime
-![loadingtime](./screenshots/loadingtime.jpg)
+![loadingtime](./screenshots/loadingtime.JPG)
 
 Activities
-![loadingtime2](./screenshots/loadingtime2.jpg)
+![loadingtime2](./screenshots/loadingtime2.JPG)
