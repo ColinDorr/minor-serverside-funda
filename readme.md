@@ -53,8 +53,17 @@ Suggestions page
 ![suggestions](./screenshots/suggestions.jpg)
 
 #### Autofill search
-![autofill-with-js](./screenshots/autofill-with-js.JPG)
+The app without javascript will use the system Autosuggestions, that are you previous searches.
 ![autofill-without-js](./screenshots/autofill-without-js.jpg)
+```
+//If javascript works the autocomplete will be turned off when loaded.
+input.setAttribute("autocomplete","off");
+
+```
+
+With working javascript, the system Autosuggestions will be turned off and my own suggestions (with the funda api/ work in progress) will be used.
+![autofill-with-js](./screenshots/autofill-with-js.JPG)
+
 
 
 #### Funda speed insight
