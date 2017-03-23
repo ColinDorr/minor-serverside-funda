@@ -1,5 +1,6 @@
 .DS_Store
 thumbs.db
+*log
 .env
 static/js/config.js
 node_modules/

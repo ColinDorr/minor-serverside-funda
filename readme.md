@@ -39,3 +39,29 @@ The user wants to look for a house. With all the filters and features, the user 
 - https://www.npmjs.com/package/dotenv
 - https://www.npmjs.com/package/request
 - https://codepen.io/postleonardo/pen/PwdQmv
+
+
+## Funda
+#### The Funda app
+![homescreen](./screenshots/homescreen.jpg)
+![search](./screenshots/search.jpg)
+![suggestions](./screenshots/suggestions.jpg)
+
+#### Autofill search
+![autofill-with-js](./screenshots/autofill-with-js.jpg)
+![autofill-without-js](./screenshots/autofill-without-js.jpg)
+
+
+#### Funda speed insight
+PageSpeed Insights desktop:
+![desktop-support](./screenshots/desktop-support.jpg)
+
+PageSpeed Insights mobile:
+![mobile-support](./screenshots/mobile-support.jpg)
+
+#### Chorme developer tools
+Loadingtime
+![loadingtime](./screenshots/loadingtime.jpg)
+
+Activities
+![loadingtime2](./screenshots/loadingtime2.jpg)
