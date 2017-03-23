@@ -20,7 +20,7 @@ The user wants to look for a house. With all the filters and features, the user 
     - stylesheets
 - routes
 - views
-
+ 
 
 ### Wishlist
 - Autosuggestion api
