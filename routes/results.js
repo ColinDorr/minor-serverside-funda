@@ -51,13 +51,20 @@ router.post('/', function(req, res){
 
 router.get('/:index', function(req,res){
 	var id = req.params.index;
-    var detailHouse = "http://partnerapi.funda.nl/feeds/Aanbod.svc/json/detail/"+process.env.API_KEY + "/koop/" + id;
-    console.log(detailHouse)
-	request(detailHouse, function(error, response, data) {
+    var userdata = req.app.get('userdata');
+    var type ="/koop/";
+    // if (userdata.TYPE == ""){type = "/koop/"}
+    // else if(userdata.TYPE == ""){type = "/?type=koop&zo=/"}
+    // else {type = "/?type=nieuwbouw&zo=/"}
 
-		data = JSON.parse(data);
-		res.locals.data = data;
-        console.log(data);
+
+    var detailHouse = "http://partnerapi.funda.nl/feeds/Aanbod.svc/json/detail/"+process.env.API_KEY + type + id;
+
+    console.log(detailHouse)
+	request(detailHouse, function(error, response, detailData) {
+		detailData = JSON.parse(detailData);
+		res.locals.detailData = detailData;
+        console.log(detailData);
 		res.render('details');
 	});
 });

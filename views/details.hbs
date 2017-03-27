@@ -58,17 +58,24 @@
 
 <section id="searchResults">
     <section class="homeData">
-        {{#each data.Objects}}
-            <section class="result">
-                <a class="link" href="{{this.URL}}">
-                    <img class="mainImage" src="{{this.FotoLarge}}" alt="{{this.Adres}}">
-                </a>
-                <a class="link" href="{{this.URL}}"><h3 class="adres">{{this.Adres}}</h3></a>
-                <p class="postWoon">{{this.Postcode}} {{this.Woonplaats}}</p>
-                <p class="Koopprijs">{{{this.PrijsGeformatteerdHtml}}}</p>
-                <p class="oppervlakte">Oppervlakte {{this.Woonoppervlakte}} m&#178;</p>
-                <p class="omschrijving">omschrijving {{this.VolledigeOmschrijving}}</p>
-            </section>
-        {{/each}}
+        {{#if detailData}}
+        <a class="link" href="{{this.URL}}">
+            <h3 class="adres">{{detailData.Adres}}</h3>
+        </a>
+
+        <a class="link" href="{{detailData.URL}}">
+            <img class="mainImage" src="{{detailData.HoofdFoto}}" alt="{{detailData.Adres}}">
+        </a>
+        <br/>
+        <a class="link" href="{{detailData.URL}}"><button>Zie meer</button></a>
+        <br/>
+        <p class="postWoon">{{detailData.Postcode}} {{detailData.Plaats}}</p>
+        <p class="Koopprijs">{{{detailData.PrijsGeformatteerdHtml}}}</p>
+        <p class="oppervlakte">Oppervlakte {{detailData.Woonoppervlakte}} m&#178;</p>
+
+        <h3>Omschrijving:</h3>
+        <p class="omschrijving">{{detailData.VolledigeOmschrijving}}</p>
+        <a class="link" href="{{detailData.URL}}"><button>Zie meer</button></a>
+        {{/if}}
     </section>
 </section>
