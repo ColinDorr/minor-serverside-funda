@@ -36,7 +36,7 @@
                     <label for="locatie">Locatie</label>
                     <input type="text" name="locatie" id="locatie" placeholder="Plaats, buurt, adres etc.">
                     <ul id="autocomplete-results"></ul>
-                    
+
                     <label for="afstand">Afstand</label>
                     <select name="distance" id="afstand" selected="selected">0
                           <option value="0">+0km</option>
@@ -62,10 +62,10 @@
     <section class="homeData">
         {{#each data.Objects}}
             <section class="result">
-                <a class="link" href="{{this.URL}}">
+                <a class="link" href="/results/{{this.Id}}">
                     <img class="mainImage" src="{{this.FotoLarge}}" alt="{{this.Adres}}">
                 </a>
-                <a class="link" href="{{this.URL}}"><h3 class="adres">{{this.Adres}}</h3></a>
+                <a class="link" href="/results/{{this.Id}}"><h3 class="adres">{{this.Adres}}</h3></a>
                 <p class="postWoon">{{this.Postcode}} {{this.Woonplaats}}</p>
                 <p class="Koopprijs">{{{this.PrijsGeformatteerdHtml}}}</p>
                 <p class="oppervlakte">Oppervlakte {{this.Woonoppervlakte}} m&#178;</p>

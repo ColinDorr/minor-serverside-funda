@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var results = require('./routes/results');
 var suggestions = require('./routes/suggestions');
+// var suggestions = require('./routes/offline');
+
 require('dotenv').config()
 
 var app = express();
@@ -19,6 +21,12 @@ app.set('userdata', {
     PRIJSMAX : 2147483647,
     PAGE :"/&page=1"
 });
+
+var apiKey = process.env.API_KEY;
+
+if (!apiKey) {
+  throw new Error('Missing the `API_KEY` in env.');
+}
 
 
 // view engine setup
@@ -37,6 +45,7 @@ app.use('/', index);
 // app.use('/:location', location);
 app.use('/results', results);
 app.use('/suggestions', suggestions);
+// app.use('/offline', offline);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -55,5 +64,4 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 module.exports = app;

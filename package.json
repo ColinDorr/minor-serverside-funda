@@ -1,6 +1,6 @@
 {
   "name": "minor-serverside-funda",
-  "version": "0.3.2",
+  "version": "1.0.7",
   "private": true,
   "dependencies": {
     "body-parser": "~1.16.0",
