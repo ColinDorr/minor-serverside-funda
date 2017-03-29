@@ -497,6 +497,47 @@ li.autoSuggestion{
 }
 li.autoSuggestion:focus, li.autoSuggestion:hover{
     background: #F8C463;
+    color: #53241b;
+}
+.details{
+    width: 80%;
+    margin: 0 auto;
+}
+.details section{
+    display: flex;
+    flex-direction: column;
+}
+
+.details img{
+    width: 100%;
+}
+.details a:hover img{
+        opacity: 0.6;
+}
+
+.details section p{
+    max-width: 35em;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4em;
+}
+.details section h3{
+    margin: 1em 0 0 0;
+    padding: 0;
+}
+.details section h4{
+    margin: 0.5em 0 0 0;
+    padding: 0;
+}
+
+a.link_button{
+    width: 70%;
+    margin: 0 auto;
+    padding: 1em;
+    background-color: #0071B3;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
 }
 
 

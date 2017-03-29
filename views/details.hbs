@@ -57,25 +57,46 @@
 </main>
 
 <section id="searchResults">
-    <section class="homeData">
+    <section class="details">
         {{#if detailData}}
-        <a class="link" href="{{this.URL}}">
-            <h3 class="adres">{{detailData.Adres}}</h3>
-        </a>
+            <header>
+                <a class="link" href="{{this.URL}}">
+                    <h3 class="adres">{{detailData.Adres}}</h3>
+                </a>
+                <p class="postWoon">{{detailData.Postcode}} {{detailData.Plaats}}</p>
+                <p class="Koopprijs">{{{detailData.PrijsGeformatteerdHtml}}}</p>
+            </header>
+            <section>
+                <a class="link" href="{{this.URL}}">
+                    <img class="mainImage" src="{{detailData.HoofdFoto}}" alt="{{detailData.Adres}}">
+                </a>
+                <a class="link_button" href="{{detailData.URL}}">Zie meer
+                </a>
 
-        <a class="link" href="{{detailData.URL}}">
-            <img class="mainImage" src="{{detailData.HoofdFoto}}" alt="{{detailData.Adres}}">
-        </a>
-        <br/>
-        <a class="link" href="{{detailData.URL}}"><button>Zie meer</button></a>
-        <br/>
-        <p class="postWoon">{{detailData.Postcode}} {{detailData.Plaats}}</p>
-        <p class="Koopprijs">{{{detailData.PrijsGeformatteerdHtml}}}</p>
-        <p class="oppervlakte">Oppervlakte {{detailData.Woonoppervlakte}} m&#178;</p>
+                <h3>Omschrijving:</h3>
+                <p class="omschrijving">{{detailData.VolledigeOmschrijving}}</p>
 
-        <h3>Omschrijving:</h3>
-        <p class="omschrijving">{{detailData.VolledigeOmschrijving}}</p>
-        <a class="link" href="{{detailData.URL}}"><button>Zie meer</button></a>
+                <h3>Kenmerken:</h3>
+                <h4>Overdracht</h4>
+                <p>Vraagprijs: {{detailData.KoopPrijs}} k.k.</p>
+                <p>Servicekosten: {{detailData.ServiceKosten}}</p>
+                <p>Aangeboden sinds: {{detailData.AangebodenSindsTekst}}</p>
+                <p>Status: {{detailData.VerkoopStatus}}</p>
+                <p>Aanvaarding: {{detailData.Aanvaarding}}</p>
+
+                <h4>Bouw</h4>
+                <p>Soort woonhuis: {{detailData.SoortWoning}}</p>
+                <p>Soort bouw: {{detailData.Bouwvorm}}</p>
+                <p>Bouwjaar: {{detailData.Bouwjaar}}</p>
+                <p>Soort dak: {{detailData.SoortDak}}</p>
+
+                <h4>Indeling</h4>
+                <p>Aantal kamers: {{detailData.WoonOppervlakte}}</p>
+                <p>Aantal badkamers: {{detailData.AantalBadkamers}}</p>
+                <p>Aantal woonlagen: {{detailData.AantalWoonlagen}}</p>
+                <p>Voorzieningen: {{detailData.Voorzieningen}}</p>
+
+            </section>
         {{/if}}
     </section>
 </section>

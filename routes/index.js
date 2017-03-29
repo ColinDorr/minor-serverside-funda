@@ -4,7 +4,7 @@ var router = express.Router();
 
 require('dotenv').config();
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
     var userdata = req.app.get('userdata');
     var callURL = process.env.URL+ process.env.API_KEY+ userdata.TYPE+ userdata.LOCATION+"/+"+ userdata.DISTANCE+"km/"+ userdata.PRIJSMIN+ "+"+ userdata.PRIJSMAX+ userdata.PAGE+ "&pagesize=3";
 

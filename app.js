@@ -4,15 +4,23 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var minify = require('express-minify');
+var compression = require('compression')
+var browserify = require('browserify');
 
 var index = require('./routes/index');
 var results = require('./routes/results');
 var suggestions = require('./routes/suggestions');
-// var suggestions = require('./routes/offline');
+var offline = require('./routes/offline');
+var app = express();
+var apiKey = process.env.API_KEY;
 
 require('dotenv').config()
 
-var app = express();
+if (!apiKey) {
+    throw new Error('Missing the `API_KEY` in env.');
+}
+
 app.set('userdata', {
     TYPE : "/?type=koop&zo=/",
     LOCATION : "heel-nederland",
@@ -22,11 +30,8 @@ app.set('userdata', {
     PAGE :"/&page=1"
 });
 
-var apiKey = process.env.API_KEY;
-
-if (!apiKey) {
-  throw new Error('Missing the `API_KEY` in env.');
-}
+app.use(compression())
+app.use(minify("javascripts/script.js","stylesheets/style.css"));
 
 
 // view engine setup
@@ -45,17 +50,17 @@ app.use('/', index);
 // app.use('/:location', location);
 app.use('/results', results);
 app.use('/suggestions', suggestions);
-// app.use('/offline', offline);
+app.use('/offline',offline);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function(req, res) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

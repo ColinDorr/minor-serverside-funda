@@ -1,6 +1,6 @@
 {
   "name": "minor-serverside-funda",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "private": true,
   "dependencies": {
     "body-parser": "~1.16.0",
@@ -8,20 +8,22 @@
     "debug": "~2.6.0",
     "dotenv": "~4.0.0",
     "express": "~4.14.1",
-    "express-session": "^1.15.1",
     "hbs": "~4.0.1",
     "morgan": "~1.7.0",
     "request": "~2.81.0",
     "serve-favicon": "~2.3.2"
-},
-"scripts":{
+  },
+  "scripts": {
     "start": "nodemon ./bin/www",
     "expose": "ngrok http 3000",
-    "build": "browserify app.js -o build.js",
-    "lint": "xo"
-},
-"devDependencies": {
+    "build": "browserify public/javascripts/script.js -o public/javascripts/bundle.js",
+    "lint": "xo",
+    "test": "npm run build && npm run start"
+  },
+  "devDependencies": {
     "browserify": "^14.1.0",
+    "compression": "^1.6.2",
+    "express-minify": "^0.2.0",
     "ngrok": "^2.2.6",
     "xo": "^0.18.0"
   },
@@ -29,7 +31,9 @@
     "space": true,
     "esnext": false,
     "ignore": [
-      "build.js"
+      "app.js",
+      "routes/*.js",
+      "sw.js"
     ]
   }
 }

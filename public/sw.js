@@ -5,13 +5,14 @@ self.addEventListener("install", function (event) {
     caches.open("funda-v1-core")
       .then( function (cache) {
         return cache.addAll(
-          [
-            "/offline/",
-            "/stylesheets/style.min.css",
-            "/javascripts/script.js",
-            "/images/homePicture.jpg",
-            "/images/fundawonen-logo.svg",
-          ]
+            [
+              "/offline/",
+              "/stylesheets/style.css",
+              "/javascripts/script.js",
+              "/images/homePicture.jpg",
+              "/images/fundawonen-logo.svg",
+              "/images/dummy-image.jpg",
+            ]
         );
       })
       .then(function () {
