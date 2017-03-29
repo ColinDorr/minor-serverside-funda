@@ -37,7 +37,10 @@
                 <section name="locatie">
                     <label for="locatie">Locatie</label>
                     <input type="text" name="locatie" id="locatie" placeholder="Plaats, buurt, adres etc." autocomplete="on">
-                    <ul id="autocomplete-results"></ul>
+                    <div class="autoSuggestions">
+                        <p>Autosuggestions</p>
+                        <ul id="autocomplete-results"></ul>
+                    </div>
 
                     <label for="afstand">Afstand</label>
                     <select name="distance" id="afstand" selected="selected">0
@@ -64,7 +67,21 @@
         {{#each data.Objects}}
             <section class="result">
                 <a class="link" href="/results/{{this.Id}}">
-                    <img class="mainImage" src="{{this.FotoLarge}}" alt="{{this.Adres}}">
+                    <picture class="mainImage">
+                          <source
+                            media="(max-width: 120px)"
+                            srcset="{{this.FotoSecure}}">
+                          <source
+                            media="(max-width: 320px)"
+                            srcset="{{this.FotoMedium}}">
+                            <source
+                              media="(max-width: 640px)"
+                              srcset="{{this.FotoLarge}}">
+                          <img
+                            src="{{this.FotoLarge}}"
+                            alt="{{this.Adres}}">
+                        </picture>
+                <!-- <img class="mainImage" src="{{this.FotoLarge}}" alt="{{this.Adres}}"> -->
                 </a>
                 <a class="link" href="/results/{{this.Id}}"><h3 class="adres">{{this.Adres}}</h3></a>
                 <p class="postWoon">{{this.Postcode}} {{this.Woonplaats}}</p>

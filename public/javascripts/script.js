@@ -31,9 +31,11 @@ input.onkeyup = function(e) {
             for (i = 0; i < answers_return.length && i<6; i++) {
                 autocomplete_results.innerHTML += '<li class="autoSuggestion">' + (answers_return[i]) + '</li>';
             }
+            document.querySelector(".autoSuggestions").style.display = 'block';
           }
           else {
             autocomplete_results.innerHTML = '';
+            document.querySelector(".autoSuggestions").style.display = 'none';
          }
     }
 }
@@ -55,3 +57,11 @@ function getJSON(url, callback) {
 autocomplete_results.onclick = function(e) {
     input.value = e.target.innerHTML;
 }
+
+if (navigator.onLine !== true) {
+      var images = document.querySelectorAll('picture  img'), i;
+
+      for (i = 0; i < images.length; ++i) {
+        images[i].setAttribute("src", "images/dummy-image.jpg");
+      }
+    }

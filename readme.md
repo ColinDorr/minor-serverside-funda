@@ -85,12 +85,15 @@ The user wants to look for a house. With all the filters and features, the user 
 
 
 ## Wishlist/ Todo
-- [ ] Autosuggestion api
+- [x] Autosuggestion api
 - [ ] User sessions
 - [ ] Improve Performace
-    - [ ] Minimize content.
-    - [ ]Img compression
-    - [ ]Critical css
+    - [ ]Img compression.
+
+    - [x] Minimize content.
+    - [x]Responsive picture element.
+    - [x]Critical css.
+    - [x]Gzip conpression.
 
 Optional:
 - [ ] Google map api
@@ -102,6 +105,7 @@ Optional:
 - https://www.npmjs.com/package/dotenv
 - https://www.npmjs.com/package/request
 - https://codepen.io/postleonardo/pen/PwdQmv
+- https://github.com/TimoVerkroost/minor-performance-matters-funda
 
 
 ## Funda

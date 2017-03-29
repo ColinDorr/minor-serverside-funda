@@ -45,7 +45,6 @@ header ul{
     flex: 100%;
     display: flex;
     flex-direction: row;
-    float: right;
     border-right: 0.1em solid #DE9000;
     margin: 0;
     box-sizing: border-box;
@@ -55,7 +54,6 @@ header ul{
     padding: 0;
 }
 header ul li {
-    flex: 100%;
     margin: 0;
     border-top: none;
     border-top: 0.1em solid #DE9000;
@@ -83,7 +81,9 @@ form label[for="nieuwbouw"]:hover{
 
 main header nav{
     width: 100%;
-    margin: auto;
+    margin: 0;
+    background: #f7a100;
+    border-bottom: .1em solid #de9000
 }
 main header nav ul{
         width: 100%;
@@ -98,17 +98,20 @@ main header nav ul{
         flex-wrap: nowrap;
     }
     header ul{
-        flex: 1;
         flex-wrap: nowrap;
     }
     header ul li {
-        flex: 1;
         border-left: 0.1em solid #DE9000;
         border-top: none;
     }
     main header nav{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 50em) {
+    main header nav{
         width: 80%;
-        margin: auto;
+        margin: 0 auto;
     }
 }
 
@@ -138,7 +141,8 @@ main header nav ul{
 
 form{
     width: 100%;
-    margin: 1em 0;
+    margin: 0;
+    padding-top: 1.2em;
     background: #F7A100;
     box-sizing: border-box;
     color: white;
@@ -160,9 +164,16 @@ form section:nth-of-type(1){
     box-sizing: border-box;
     font-size: 1.1rem;
 }
+
 form input[type="radio"] {
-    display: none;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
 }
+form input[type="radio"]:focus {
+outline: none;
+}
+
 form input[type="radio"]+label {
     border-radius: 0.2em;
     padding:0.5em;
@@ -175,9 +186,11 @@ form input[type="radio"]:checked+label {
     background: #F8C463;
     color: #53241B;
 }
-form input[type="radio"]:checked+label:hover{
-    background: #DE7000
+form input[type="radio"]label:hover,
+form input[type="radio"]label:focus{
+    background: #DE7000;
 }
+
 form section:nth-of-type(2){
     padding: 0 0.5em;
     display: flex;
@@ -196,16 +209,6 @@ select{
     padding: 0;
     font-size: 1.1rem;
 }
-/*
-button.sendAnswers{
-    width: 70%;
-    margin: 0 15% 1em 15%;
-    box-sizing: border-box;
-    border: none;
-    padding: 1em;
-    color: white;
-    background: #0071B3
-}*/
 
 form section:nth-of-type(2) button.sendAnswers{
     order: 4;
@@ -221,7 +224,6 @@ form section:nth-of-type(2) button.sendAnswers{
 @media screen and (min-width: 30em) {
     form{
         width: 100%;
-        margin: 1em 0;
         background: #F7A100;
         box-sizing: border-box;
         color: white;
@@ -278,9 +280,9 @@ form section:nth-of-type(2) button.sendAnswers{
     }
 }
 @media screen and (min-width: 50em) {
-    form {
+    form{
     width: 80%;
-    margin: 1em auto;
+    margin: 0 auto 1em auto;
     background: #F7A100;
     box-sizing: border-box;
     color: white;
@@ -489,16 +491,56 @@ li.active a:hover{
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
-li.autoSuggestion{
+div.autoSuggestions{
+    display: none;
+    width: 100%;
+    order: 2;
+}
+#autocomplete-results{
+        order: 2;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: 0.2em auto 1em 0;
+        background: white;
+        padding: 0.2em;
+        border-radius: 0.5em;
+}
+#autocomplete-results li.autoSuggestion{
     cursor: pointer;
     padding: 0.5em;
+    margin: 0.5%;
     border-radius: 0.5em;
+    background: #f7a100;
+    font-size: 0.8rem;
 }
-li.autoSuggestion:focus, li.autoSuggestion:hover{
+#autocomplete-results li.autoSuggestion:focus,
+#autocomplete-results li.autoSuggestion:hover{
     background: #F8C463;
     color: #53241b;
 }
+
+@media screen and (min-width: 20em) {
+    #autocomplete-results{
+            width: 100%;
+    }
+    #autocomplete-results li.autoSuggestion{
+        flex: 49%;
+        width: 49%;
+    }
+}
+@media screen and (min-width: 50em) {
+    #autocomplete-results{
+            width: 100%;
+    }
+    #autocomplete-results li.autoSuggestion{
+        flex: 31%;
+        width: 31%;
+    }
+}
+
+
 .details{
     width: 80%;
     margin: 0 auto;
@@ -539,6 +581,5 @@ a.link_button{
     text-align: center;
     text-decoration: none;
 }
-
 
 @media screen and (min-width: 30em) {}

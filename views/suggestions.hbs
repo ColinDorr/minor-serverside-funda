@@ -63,7 +63,20 @@
         {{#each data.Objects}}
             <section class="result">
                 <a class="link" href="/results/{{this.Id}}">
-                    <img class="mainImage" src="{{this.FotoLarge}}" alt="{{this.Adres}}">
+                    <picture class="mainImage">
+                          <source
+                            media="(max-width: 120px)"
+                            srcset="{{this.FotoSecure}}">
+                          <source
+                            media="(max-width: 320px)"
+                            srcset="{{this.FotoMedium}}">
+                            <source
+                              media="(max-width: 640px)"
+                              srcset="{{this.FotoLarge}}">
+                          <img
+                            src="{{this.FotoLarge}}"
+                            alt="{{this.Adres}}">
+                        </picture>
                 </a>
                 <a class="link" href="/results/{{this.Id}}"><h3 class="adres">{{this.Adres}}</h3></a>
                 <p class="postWoon">{{this.Postcode}} {{this.Woonplaats}}</p>
