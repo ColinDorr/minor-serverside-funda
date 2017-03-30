@@ -60,14 +60,12 @@
     <section class="details">
         {{#if detailData}}
             <header>
-                <a class="link" href="{{this.URL}}">
                     <h3 class="adres">{{detailData.Adres}}</h3>
-                </a>
                 <p class="postWoon">{{detailData.Postcode}} {{detailData.Plaats}}</p>
                 <p class="Koopprijs">{{{detailData.PrijsGeformatteerdHtml}}}</p>
             </header>
             <section>
-                <a class="link" href="{{this.URL}}">
+                <a class="link" href="{{detailData.URL}}">
                     <img class="mainImage" src="{{detailData.HoofdFoto}}" alt="{{detailData.Adres}}">
                 </a>
                 <a class="link_button" href="{{detailData.URL}}">Zie meer
