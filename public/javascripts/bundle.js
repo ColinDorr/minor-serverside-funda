@@ -4,9 +4,11 @@ var secondScript = require('./secondScript.js');
 // variables
 var input = document.querySelector('input[name="locatie"]');
 var autocomplete_results = document.getElementById("autocomplete-results");
+var typeSelection = document.querySelectorAll('input[name="huurOfKoopSelectie"]');
 var answers = [];
 var answers_return = [];
 var results;
+var typeHuis = "koop"
 
 console.log("Hello, this is your normal script");
 
@@ -14,8 +16,9 @@ input.setAttribute("autocomplete","off");
 
 // event onkeyup
 input.onkeyup = function(e) {
+    checkType();
     // jsonp("http://zb.funda.info/frontend/geo/suggest/?query="+input.value +"&max=6&type=koop");
-    getJSON("http://zb.funda.info/frontend/geo/suggest/?query="+input.value +"&max=6&type=koop", data => {
+    getJSON("http://zb.funda.info/frontend/geo/suggest/?query="+input.value +"&max=6&type="+typeHuis, data => {
         answers = data.Results;
         MakeList(answers)
     })
@@ -65,6 +68,18 @@ if (navigator.onLine !== true) {
       for (i = 0; i < images.length; ++i) {
         images[i].setAttribute("src", "images/dummy-image.jpg");
       }
+    }
+
+function checkType(){
+        if (typeSelection[0].checked == true){
+            typeHuis = "koop"
+        }
+        else if (typeSelection[1].checked == true){
+            typeHuis = "huur"
+        }
+        else{
+            typeHuis = "nieuwbouw"
+        }
     }
 
 },{"./secondScript.js":2}],2:[function(require,module,exports){
