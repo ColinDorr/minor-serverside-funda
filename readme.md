@@ -139,7 +139,7 @@ When the javascript gets succesvolly loaded. Hide the autocomplete.
 
 PS. The autocomplete attribute does not exist in IE8 and lower. Because of this the javascript will not work and the user will have no custom autosuggest.
 
-![autofill-with-js](./screenshots/autofill-without-js.JPG)
+![autofill-with-js](./screenshots/autofill-without-js.jpg)
 ```
 // turn off the autocomplete on the search input field
 input.setAttribute("autocomplete","off");
@@ -163,7 +163,7 @@ input.addEventListener("keyup", startAutoSuggest);
 ............
 
 ```
-![autofill-without-js](./screenshots/autofill-with-js.jpg)
+![autofill-without-js](./screenshots/autofill-with-js.JPG)
 
 Possible inprovements:
 - [ ] Make the autocompletes tabable. Now they are just list items.
@@ -213,19 +213,17 @@ PageSpeed Insights mobile:
 
  ## Wishlist/ To do
  - [x] Autosuggestion api
- - [ ] Improve Performace
+ - [ ] Improve Performace.
      - [ ]Img compression.
-
      - [x] Minimize content.
      - [x]Responsive picture element.
      - [x]Critical css.
      - [x]Gzip conpression.
-    
-- Make the autocompletes tabable. Now they are just list items.
+- [ ] Make the autocompletes tabable. Now they are just list items.
 
  Optional:
  - [ ] Google map api
- - Make link text better, by adding more explaining data, without getting to long (is now adres, could be better).
+ - [ ] Make link text better, by adding more explaining data, without getting to long (is now adres, could be better).
 
  ### Sources:
  - https://github.com/wooorm/dictionary
