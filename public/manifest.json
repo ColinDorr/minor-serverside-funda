@@ -1,17 +1,15 @@
 {
  "short_name": "Funda",
  "name": "ServerSide Funda web App",
- "start_url": "/",
+ "start_url": "/?homescreen",
  "display" : "standalone",
  "theme_color": "#DE9000 ",
  "background_color": "#e7f1f5",
- "icons": [{
-   "src": "/favicon.ico",
-   "sizes": "32x32",
-   "type": "image/ico"
- }, {
-   "src": "/apple-touch-icon.png",
-   "sizes": "180x180",
+ "icons": [
+  {
+   "src": "/images/app-icon-funda.png",
+   "sizes": "256x256",
    "type": "image/png"
- }]
+  }
+ ]
 }

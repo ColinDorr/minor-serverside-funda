@@ -1,18 +1,18 @@
-console.log("server ready");
-
 self.addEventListener("install", function (event) {
   event.waitUntil(
     caches.open("funda-v1-core")
       .then( function (cache) {
         return cache.addAll(
             [
-              "/offline/",
-              "/stylesheets/style.css",
-              "/javascripts/script.js",
-              "/images/homePicture.jpg",
-              "/images/fundawonen-logo.svg",
-              "/images/dummy-image.jpg",
-            ]
+            "/offline/",
+            "/stylesheets/style.css",
+            "/javascripts/bundle.js",
+            "/images/homePicture.jpg",
+            "/images/fundawonen-logo.svg",
+            "/images/dummy-image.jpg",
+            "/images/dummy-image.JPG",
+            "/manifest.json"
+          ]
         );
       })
       .then(function () {

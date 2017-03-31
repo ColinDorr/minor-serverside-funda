@@ -130,7 +130,7 @@ The results from the screanreader where pretty good, if I say so myself. Everyth
 #### Javascript
 Because most of the functions of the web application are getting renderd on the server. You could turn off the javsascript and everything would still work. The user would still get to see the list with links and he/she could still search..
 
-The only difference between the site with and without javascript is, that without javascript, the custom autocomplete will not get displayed. But the system autocomplete (previous searched items) will get displayed.
+The only difference between the site with and without javscript is, that without javascript, the custom autocomplete will not get displayed. But the system autocomplete (previous searched items) will get displayed.
 
 ###### Javascript Autocomplete
 When the javascript gets succesvolly loaded. Hide the autocomplete.
@@ -186,35 +186,39 @@ PageSpeed Insights mobile:
 
 ## Photo's DeviceLab
 ##### All screens
-<!-- ![DeviceLab foto3](./screenshots/foto3.jpg) -->
+![DeviceLab foto1](./screenshots/foto1.jpg)
 
 ##### Big tablet landscape
-<!-- ![DeviceLab foto1](./screenshots/foto1.jpg)
-![DeviceLab foto2](./screenshots/foto2.jpg) -->
+Everything is the right size and it lookst nice. It all works and looks good on landscape orientation. It also loads fast.
+![DeviceLab foto2](./screenshots/foto2.jpg)
+![DeviceLab foto3](./screenshots/foto3.jpg)
 
 ##### Normal tablet portrait
-<!-- ![DeviceLab foto5](./screenshots/foto5.jpg)
+On portrait mode, the side looks nice, but the distance selection looks different from the rest of the inputs, what is not that nice.
+![DeviceLab foto4](./screenshots/foto4.jpg)
+![DeviceLab foto5](./screenshots/foto5.jpg)
 ![DeviceLab foto6](./screenshots/foto6.jpg)
-![DeviceLab foto7](./screenshots/foto7.jpg) -->
 
 ##### Mobile portrait
-<!-- ![DeviceLab foto5](./screenshots/foto4.jpg) -->
+On mobile, the website works and everything loads fast and is accessable.
+![DeviceLab foto7](./screenshots/foto7.jpg)
+![DeviceLab foto8](./screenshots/foto8.jpg)
 
 ## Loading speed
  | Throttling      |  Requests   | Transferred     | DOMContentLoaded  | Load          | Finished      |
  | :-------------  | :---------    | :-------------   | :----------                |  :---------- | :---------- |
- | '   GPRS  '      | '  9   '         | ' 233kb    '     | '   3.77s  '              | '   39.18s  '  |  '   39.88s  '|
- | '   2G  '           | '  9   '          | ' 233kb    '| '  1.62s  '                | '   8.57s  '|  '   8.94s  '|
- | '   3G  '           | '  9   '          | ' 233kb    '| '  1.64s  '                | '   3.40s  '|  '   3.73s  '|
- | '   4G  '           | '  9   '          | ' 233kb    '| '  1.87s  '                | '   1.90s  '|  '   2.40s  '|
- | '   Wifi  '         | '  9   '          | ' 233kb   '| '   1.88s  '               | '   1.89s  '|  '   2.43s  '|
- | '   No throttling  '| '  9   '      | ' 233kb    '| '   1.47s '                | '   1.48s  '| '   2.08s '|
+ | '   GPRS  '      | '  20   '      | ' 164kb    '| '   2.46s  '              | '   28.87s  '  |  '   44.06s  '|
+ | '   2G  '           | '  20   '      | ' 164kb    '| '  1.28s  '                | '   6.69s  '|  '   6.69s '|
+ | '   3G  '           | '  20   '      | ' 164kb    '| ' 1.02s  '                | '   2.88s  '|  '   2.88s  '|
+ | '   4G  '           | '  20   '      | ' 164kb    '| '  1.00s  '                | '   1.40s  '|  '   2.41s  '|
+ | '   Wifi  '         | '  20   '      | ' 164kb    '| '   768ms  '               | '   862ms  '|  '   2.12s  '|
+ | '   No throttling  '| '  20   '      | ' 164kb    '| '   823msms '                | '   927ms  '| '   2.24 '|
 
 
  ## Wishlist/ To do
  - [x] Autosuggestion api
- - [ ] Improve Performace.
-     - [ ]Img compression.
+ - [x] Improve Performace.
+     - [x]Img compression/ Picture element (responsive img choice).
      - [x] Minimize content.
      - [x]Responsive picture element.
      - [x]Critical css.
@@ -222,7 +226,7 @@ PageSpeed Insights mobile:
 - [ ] Make the autocompletes tabable. Now they are just list items.
 
  Optional:
- - [ ] Google map api
+ - [ ] Google map api (I made that in the previous funda webapp.)
  - [ ] Make link text better, by adding more explaining data, without getting to long (is now adres, could be better).
 
  ### Sources:
@@ -231,4 +235,5 @@ PageSpeed Insights mobile:
  - https://www.npmjs.com/package/dotenv
  - https://www.npmjs.com/package/request
  - https://codepen.io/postleonardo/pen/PwdQmv
- - https://github.com/TimoVerkroost/minor-performance-matters-funda
+ - https://github.com/TimoVerkroost/minor-performance-matters-funda/blob/master/public/sw.js
+ -https://www.html5rocks.com/en/tutorials/responsive/picture-element/

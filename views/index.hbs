@@ -68,20 +68,18 @@
             <section class="result">
                 <a class="link" href="/results/{{this.Id}}">
                     <picture class="mainImage">
+                        <source
+                          media="(min-width: 480px)"
+                          srcset="{{this.FotoLarge}}">
                           <source
-                            media="(max-width: 120px)"
-                            srcset="{{this.FotoSecure}}">
-                          <source
-                            media="(max-width: 320px)"
+                            media="(min-width: 240px)"
                             srcset="{{this.FotoMedium}}">
-                            <source
-                              media="(max-width: 640px)"
-                              srcset="{{this.FotoLarge}}">
-                          <img
+                          <source
+                            media="(min-width: 120px)"
+                            srcset="{{this.FotoSecure}}"> <img
                             src="{{this.FotoLarge}}"
                             alt="{{this.Adres}}">
                         </picture>
-                <!-- <img class="mainImage" src="{{this.FotoLarge}}" alt="{{this.Adres}}"> -->
                 </a>
                 <a class="link" href="/results/{{this.Id}}"><h3 class="adres">{{this.Adres}}</h3></a>
                 <p class="postWoon">{{this.Postcode}} {{this.Woonplaats}}</p>

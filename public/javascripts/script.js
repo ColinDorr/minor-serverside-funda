@@ -16,11 +16,15 @@ input.setAttribute("autocomplete","off");
 // event onkeyup
 input.onkeyup = function(e) {
     checkType();
-    // jsonp("http://zb.funda.info/frontend/geo/suggest/?query="+input.value +"&max=6&type=koop");
-    getJSON("http://zb.funda.info/frontend/geo/suggest/?query="+input.value +"&max=6&type="+typeHuis, data => {
+    var JSONkey = "http://zb.funda.info/frontend/geo/suggest/?query="+input.value +"&max=6&type="+typeHuis;
+    getJSON(JSONkey, data => {
         answers = data.Results;
         MakeList(answers)
     })
+    // function getJSON (JSONkey, data) {
+    //     answers = data.Results;
+    //     return Makelist(answers)
+    // }
     function MakeList(answer){
             answers_return = [];
             for (i = 0; i < answers.length; i++) {
